@@ -1,0 +1,603 @@
+const baseNavigationCategories = [
+  {
+    key: 'new',
+    label: 'جديد في',
+    sidebarLinks: ['جديد في', 'الأكثر مبيعاً', 'وصل حديثاً', 'عروض اليوم', 'قطع أساسية', 'ترند الموسم', 'خصومات كبيرة'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'فساتين جديدة', icon: '👗', background: 'linear-gradient(135deg,#fde2e4,#fff1f2)' },
+          { label: 'توبات جديدة', icon: '👚', background: 'linear-gradient(135deg,#f6eadf,#fff7ed)' },
+          { label: 'قمصان جديدة', icon: '👕', background: 'linear-gradient(135deg,#e8f0ff,#f5f8ff)' },
+          { label: 'أحذية جديدة', icon: '👠', background: 'linear-gradient(135deg,#efe3ff,#f8f3ff)' },
+          { label: 'حقائب جديدة', icon: '👜', background: 'linear-gradient(135deg,#f7e6dd,#fff4ee)' },
+          { label: 'جديد الجمال', icon: '💄', background: 'linear-gradient(135deg,#ffdce7,#fff0f5)' },
+          { label: 'جديد المنزل', icon: '🏠', background: 'linear-gradient(135deg,#fff0d8,#fff8ef)' },
+          { label: 'إكسسوارات جديدة', icon: '💍', background: 'linear-gradient(135deg,#e7edf1,#f7f9fb)' },
+          { label: 'ترند الآن', icon: '✨', background: 'linear-gradient(135deg,#fff4c7,#fffbe6)' },
+          { label: 'طقم كامل', icon: '🧥', background: 'linear-gradient(135deg,#efe6dd,#f9f6f2)' },
+          { label: 'قطع خفيفة', icon: '🌸', background: 'linear-gradient(135deg,#ffe9ef,#fff7fa)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'إطلالة يومية', icon: '☀️', background: 'linear-gradient(135deg,#ede8ff,#f8f7ff)' },
+          { label: 'إطلالة العمل', icon: '💼', background: 'linear-gradient(135deg,#f0efe9,#faf9f6)' },
+          { label: 'قطع السفر', icon: '✈️', background: 'linear-gradient(135deg,#e7f2ff,#f3f8ff)' },
+          { label: 'ستايل ناعم', icon: '🎀', background: 'linear-gradient(135deg,#ffe3ec,#fff3f7)' },
+          { label: 'مظهر كاجوال', icon: '🧢', background: 'linear-gradient(135deg,#f3eadd,#fbf7f1)' },
+          { label: 'ستايل الحفلات', icon: '🥂', background: 'linear-gradient(135deg,#fff1d6,#fff8eb)' },
+          { label: 'ألوان محايدة', icon: '🤍', background: 'linear-gradient(135deg,#f4f1eb,#fbfaf8)' },
+          { label: 'أساسيات يومية', icon: '🛍️', background: 'linear-gradient(135deg,#f1f2f4,#fafbfc)' },
+        ],
+      },
+    ],
+    chips: ['Trending', 'Daily Drop', 'Editor Picks', 'New Season', 'Best Value'],
+  },
+  {
+    key: 'women',
+    label: 'نساء',
+    sidebarLinks: ['نساء', 'فساتين', 'توبات', 'بليزرات', 'ملابس داخلية', 'ملابس نوم', 'إكسسوارات'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'فساتين', icon: '👗', background: 'linear-gradient(135deg,#ffe2da,#fff2ec)' },
+          { label: 'بليزرات', icon: '👚', background: 'linear-gradient(135deg,#f2e8ff,#faf6ff)' },
+          { label: 'تيشيرتات', icon: '👕', background: 'linear-gradient(135deg,#eceffb,#f7f9ff)' },
+          { label: 'بناطيل', icon: '👖', background: 'linear-gradient(135deg,#e7eef8,#f7fbff)' },
+          { label: 'جينز', icon: '🩳', background: 'linear-gradient(135deg,#dde7f6,#eff4ff)' },
+          { label: 'لانجري', icon: '🩱', background: 'linear-gradient(135deg,#ffe3ec,#fff2f6)' },
+          { label: 'ملابس نوم', icon: '🌙', background: 'linear-gradient(135deg,#f0ebff,#faf8ff)' },
+          { label: 'جاكيتات', icon: '🧥', background: 'linear-gradient(135deg,#efe4dc,#faf5f1)' },
+          { label: 'أطقم', icon: '👘', background: 'linear-gradient(135deg,#f9e6df,#fff5ef)' },
+          { label: 'ملابس سباحة', icon: '👙', background: 'linear-gradient(135deg,#dff6ff,#effcff)' },
+          { label: 'إكسسوارات', icon: '💍', background: 'linear-gradient(135deg,#e9eff4,#f7fafc)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'ستايل المكتب', icon: '📁', background: 'linear-gradient(135deg,#f0ede6,#faf8f4)' },
+          { label: 'فساتين سهرة', icon: '✨', background: 'linear-gradient(135deg,#fff0d6,#fff8eb)' },
+          { label: 'إطلالات صيفية', icon: '🌼', background: 'linear-gradient(135deg,#fff3d8,#fff9ee)' },
+          { label: 'ستايل أنثوي', icon: '🎀', background: 'linear-gradient(135deg,#ffe0ec,#fff2f7)' },
+          { label: 'أساسيات محايدة', icon: '🤍', background: 'linear-gradient(135deg,#f1efe9,#faf9f7)' },
+          { label: 'ستايل كاجوال', icon: '🧢', background: 'linear-gradient(135deg,#ececec,#f8f8f8)' },
+          { label: 'حفلات ومناسبات', icon: '🥂', background: 'linear-gradient(135deg,#fff1d9,#fff8ed)' },
+          { label: 'قطع يومية', icon: '🛍️', background: 'linear-gradient(135deg,#f1f2f4,#fbfbfc)' },
+        ],
+      },
+    ],
+    chips: ['Dresses', 'Blouses', 'Lingerie', 'Soft Glam', 'Vacation'],
+  },
+  {
+    key: 'men',
+    label: 'رجال',
+    sidebarLinks: ['رجال', 'تيشيرتات', 'قمصان', 'بناطيل', 'دينم', 'أحذية', 'رياضة'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'تيشيرتات', icon: '👕', background: 'linear-gradient(135deg,#e9eef8,#f8faff)' },
+          { label: 'قمصان', icon: '👔', background: 'linear-gradient(135deg,#e8f0ff,#f5f8ff)' },
+          { label: 'هوديز', icon: '🧥', background: 'linear-gradient(135deg,#ece5dd,#faf6f2)' },
+          { label: 'بناطيل', icon: '👖', background: 'linear-gradient(135deg,#e2e9f5,#eff4ff)' },
+          { label: 'شورتات', icon: '🩳', background: 'linear-gradient(135deg,#f0f1f3,#fbfbfc)' },
+          { label: 'جينز', icon: '🪡', background: 'linear-gradient(135deg,#d9e3f4,#edf3ff)' },
+          { label: 'جاكيتات', icon: '🧥', background: 'linear-gradient(135deg,#ece2da,#f8f3ef)' },
+          { label: 'أحذية', icon: '👟', background: 'linear-gradient(135deg,#eceef1,#f8fafb)' },
+          { label: 'ملابس رياضية', icon: '⚽', background: 'linear-gradient(135deg,#e5f7ee,#f2fcf7)' },
+          { label: 'إكسسوارات', icon: '⌚', background: 'linear-gradient(135deg,#edf1f3,#f8fafb)' },
+          { label: 'ملابس داخلية', icon: '🧦', background: 'linear-gradient(135deg,#f4f4f4,#fbfbfb)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'ستايل حضري', icon: '🏙️', background: 'linear-gradient(135deg,#eceef5,#f6f8fc)' },
+          { label: 'مظهر رسمي', icon: '💼', background: 'linear-gradient(135deg,#eeece8,#faf8f5)' },
+          { label: 'كاجوال يومي', icon: '☀️', background: 'linear-gradient(135deg,#f2efe9,#fbf9f6)' },
+          { label: 'ستايل السفر', icon: '✈️', background: 'linear-gradient(135deg,#eaf2ff,#f6f9ff)' },
+          { label: 'الصالة الرياضية', icon: '🏋️', background: 'linear-gradient(135deg,#e7f7ef,#f4fcf8)' },
+          { label: 'مودرن كلاسيك', icon: '🕶️', background: 'linear-gradient(135deg,#f2f2f2,#fbfbfb)' },
+          { label: 'عطلة نهاية الأسبوع', icon: '🌴', background: 'linear-gradient(135deg,#f7f0db,#fff8ef)' },
+          { label: 'أساسيات', icon: '🛒', background: 'linear-gradient(135deg,#f1f2f4,#fbfbfc)' },
+        ],
+      },
+    ],
+    chips: ['Shirts', 'Streetwear', 'Denim', 'Gym', 'Formal'],
+  },
+  {
+    key: 'kids',
+    label: 'الأطفال',
+    sidebarLinks: ['الأطفال', 'بنات', 'أولاد', 'رضع', 'ملابس مدرسية', 'أحذية الأطفال', 'إكسسوارات'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'فساتين بنات', icon: '👧', background: 'linear-gradient(135deg,#ffe4ef,#fff5f9)' },
+          { label: 'أطقم أولاد', icon: '🧒', background: 'linear-gradient(135deg,#e8f0ff,#f5f9ff)' },
+          { label: 'ملابس رضع', icon: '🍼', background: 'linear-gradient(135deg,#fff4d8,#fffaf0)' },
+          { label: 'ملابس نوم', icon: '🌙', background: 'linear-gradient(135deg,#efeaff,#faf8ff)' },
+          { label: 'أحذية', icon: '👟', background: 'linear-gradient(135deg,#f3f4f6,#fbfbfc)' },
+          { label: 'حقائب مدرسية', icon: '🎒', background: 'linear-gradient(135deg,#fbe9d8,#fff5ec)' },
+          { label: 'إكسسوارات شعر', icon: '🎀', background: 'linear-gradient(135deg,#ffe3ea,#fff4f8)' },
+          { label: 'ملابس سباحة', icon: '🏖️', background: 'linear-gradient(135deg,#e0f7ff,#effcff)' },
+          { label: 'ملابس مدرسية', icon: '📚', background: 'linear-gradient(135deg,#fff5d8,#fffaf0)' },
+          { label: 'جاكيتات', icon: '🧥', background: 'linear-gradient(135deg,#ece4dc,#f9f4ef)' },
+          { label: 'ألعاب بسيطة', icon: '🧸', background: 'linear-gradient(135deg,#ffe8d8,#fff5ee)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'ألوان مرحة', icon: '🌈', background: 'linear-gradient(135deg,#ffe7b3,#fff5dc)' },
+          { label: 'للرضع', icon: '🍼', background: 'linear-gradient(135deg,#fff1d8,#fff9ef)' },
+          { label: 'مستلزمات المدرسة', icon: '✏️', background: 'linear-gradient(135deg,#fff3cf,#fffaf0)' },
+          { label: 'حفلات الأطفال', icon: '🎉', background: 'linear-gradient(135deg,#ffe3ec,#fff3f8)' },
+          { label: 'ملابس مريحة', icon: '☁️', background: 'linear-gradient(135deg,#f1f4f7,#fbfcfd)' },
+          { label: 'قطع يومية', icon: '🧺', background: 'linear-gradient(135deg,#f3f1ea,#fbfaf7)' },
+          { label: 'عودة للمدرسة', icon: '🚌', background: 'linear-gradient(135deg,#f7efd9,#fff8ee)' },
+          { label: 'المفضل للأطفال', icon: '⭐', background: 'linear-gradient(135deg,#fff1c9,#fff8e5)' },
+        ],
+      },
+    ],
+    chips: ['Girls', 'Boys', 'Baby', 'School', 'Cute Picks'],
+  },
+  {
+    key: 'toys',
+    label: 'الألعاب',
+    sidebarLinks: ['الألعاب', 'تعليمية', 'هدايا', 'ألعاب ذكاء', 'رسم وتلوين', 'خرز وصلصال', 'ألعاب خارجية'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'ألعاب تعليمية', icon: '🧩', background: 'linear-gradient(135deg,#ffe8d0,#fff5ea)' },
+          { label: 'رسم وتلوين', icon: '🎨', background: 'linear-gradient(135deg,#ffe1ef,#fff3f8)' },
+          { label: 'مكعبات بناء', icon: '🧱', background: 'linear-gradient(135deg,#fff4c9,#fff9e8)' },
+          { label: 'صلصال', icon: '🫟', background: 'linear-gradient(135deg,#e2f5ff,#f2fbff)' },
+          { label: 'ألعاب إلكترونية', icon: '🎮', background: 'linear-gradient(135deg,#ece8ff,#faf8ff)' },
+          { label: 'ألعاب بنات', icon: '🧸', background: 'linear-gradient(135deg,#ffe6ef,#fff4f8)' },
+          { label: 'ألعاب أولاد', icon: '🚗', background: 'linear-gradient(135deg,#e7f0ff,#f4f8ff)' },
+          { label: 'أنشطة يدوية', icon: '✂️', background: 'linear-gradient(135deg,#fff1d6,#fff8ea)' },
+          { label: 'حروف وأرقام', icon: '🔤', background: 'linear-gradient(135deg,#fff3d0,#fffaf0)' },
+          { label: 'ألعاب خارجية', icon: '⚽', background: 'linear-gradient(135deg,#e5f8ed,#f2fcf6)' },
+          { label: 'هدايا الأطفال', icon: '🎁', background: 'linear-gradient(135deg,#ffe2ea,#fff3f8)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'الأعلى تقييماً', icon: '⭐', background: 'linear-gradient(135deg,#fff0ca,#fff8e8)' },
+          { label: 'ألعاب ذكية', icon: '🧠', background: 'linear-gradient(135deg,#e6f0ff,#f4f8ff)' },
+          { label: 'هدايا مميزة', icon: '🎁', background: 'linear-gradient(135deg,#ffe3ec,#fff4f8)' },
+          { label: 'مشاريع مدرسية', icon: '📐', background: 'linear-gradient(135deg,#fff1d6,#fff8eb)' },
+          { label: 'ألعاب ناعمة', icon: '🧸', background: 'linear-gradient(135deg,#f4e8e1,#fbf5f1)' },
+          { label: 'تعلم من خلال اللعب', icon: '📚', background: 'linear-gradient(135deg,#f8f0d9,#fff8ed)' },
+          { label: 'أنشطة جماعية', icon: '👨‍👩‍👧‍👦', background: 'linear-gradient(135deg,#e9f6ff,#f4fbff)' },
+          { label: 'اكتشف الجديد', icon: '✨', background: 'linear-gradient(135deg,#f4eaff,#fbf8ff)' },
+        ],
+      },
+    ],
+    chips: ['Educational', 'Coloring', 'Blocks', 'Gift Picks', 'Creative'],
+  },
+  {
+    key: 'electronics',
+    label: 'إلكترونيات',
+    sidebarLinks: ['إلكترونيات', 'ملحقات الموبايل', 'سماعات', 'إضاءة', 'أجهزة صغيرة', 'ألعاب إلكترونية', 'منظمات مكتب'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'جرابات', icon: '📱', background: 'linear-gradient(135deg,#eaf2ff,#f5f8ff)' },
+          { label: 'سماعات', icon: '🎧', background: 'linear-gradient(135deg,#f0f1f3,#fbfbfc)' },
+          { label: 'ساعات ذكية', icon: '⌚', background: 'linear-gradient(135deg,#edf1f3,#fafbfc)' },
+          { label: 'إضاءة مكتبية', icon: '💡', background: 'linear-gradient(135deg,#fff2d2,#fff8ea)' },
+          { label: 'منظمات أسلاك', icon: '🔌', background: 'linear-gradient(135deg,#eceff3,#f8fafb)' },
+          { label: 'ميكروفونات', icon: '🎙️', background: 'linear-gradient(135deg,#f0e7ff,#faf8ff)' },
+          { label: 'كاميرات صغيرة', icon: '📷', background: 'linear-gradient(135deg,#ffe6ef,#fff4f8)' },
+          { label: 'أجهزة ألعاب', icon: '🎮', background: 'linear-gradient(135deg,#ede9ff,#faf8ff)' },
+          { label: 'كيبوردات', icon: '⌨️', background: 'linear-gradient(135deg,#edf1f3,#fafbfc)' },
+          { label: 'مستلزمات كمبيوتر', icon: '🖱️', background: 'linear-gradient(135deg,#edf1f4,#fafbfc)' },
+          { label: 'شواحن', icon: '🔋', background: 'linear-gradient(135deg,#fff4d8,#fffaf0)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'مكتب ذكي', icon: '🖥️', background: 'linear-gradient(135deg,#edf2f7,#fafbfd)' },
+          { label: 'اكسسوارات موبايل', icon: '📱', background: 'linear-gradient(135deg,#eaf2ff,#f5f8ff)' },
+          { label: 'إضاءة غرفتك', icon: '✨', background: 'linear-gradient(135deg,#fff0cf,#fff8e8)' },
+          { label: 'جيمر', icon: '🎮', background: 'linear-gradient(135deg,#efeaff,#fbf8ff)' },
+          { label: 'صناع محتوى', icon: '📹', background: 'linear-gradient(135deg,#ffe5ef,#fff3f8)' },
+          { label: 'تنظيم المكتب', icon: '📦', background: 'linear-gradient(135deg,#f1f3f4,#fbfbfc)' },
+          { label: 'إكسسوارات السفر', icon: '✈️', background: 'linear-gradient(135deg,#e7f3ff,#f4f9ff)' },
+          { label: 'الأكثر طلباً', icon: '🔥', background: 'linear-gradient(135deg,#fff1d6,#fff8eb)' },
+        ],
+      },
+    ],
+    chips: ['Gadgets', 'Audio', 'Gaming', 'Desk Setup', 'Mobile'],
+  },
+  {
+    key: 'shoes',
+    label: 'أحذية',
+    sidebarLinks: ['أحذية', 'كاجوال', 'رياضية', 'صنادل', 'كعب عالٍ', 'أحذية رجالي', 'أحذية أطفال'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'صنادل', icon: '🩴', background: 'linear-gradient(135deg,#f6eadf,#fff7ed)' },
+          { label: 'أحذية رياضية', icon: '👟', background: 'linear-gradient(135deg,#edf2f6,#f9fafb)' },
+          { label: 'كعب عالي', icon: '👠', background: 'linear-gradient(135deg,#ffe3ea,#fff4f8)' },
+          { label: 'أحذية منزلية', icon: '🥿', background: 'linear-gradient(135deg,#f2ede7,#fbf9f6)' },
+          { label: 'أحذية رجالي', icon: '👞', background: 'linear-gradient(135deg,#ece7e1,#f8f5f1)' },
+          { label: 'أحذية أطفال', icon: '👶', background: 'linear-gradient(135deg,#fff2d8,#fff9ef)' },
+          { label: 'بوت', icon: '🥾', background: 'linear-gradient(135deg,#f1e6dd,#faf5f1)' },
+          { label: 'حذاء سهل الارتداء', icon: '🥿', background: 'linear-gradient(135deg,#edeff1,#fafbfc)' },
+          { label: 'نعال', icon: '🩴', background: 'linear-gradient(135deg,#fff1d8,#fff8ee)' },
+          { label: 'مستلزمات الحذاء', icon: '🧴', background: 'linear-gradient(135deg,#f4f4f4,#fbfbfb)' },
+          { label: 'حقائب أحذية', icon: '🎒', background: 'linear-gradient(135deg,#edf2f6,#f9fafb)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'راحة طوال اليوم', icon: '☁️', background: 'linear-gradient(135deg,#f2f4f7,#fbfcfd)' },
+          { label: 'ستايل يومي', icon: '☀️', background: 'linear-gradient(135deg,#f3f0ea,#fbf9f6)' },
+          { label: 'حفل ومناسبات', icon: '🥂', background: 'linear-gradient(135deg,#fff0d0,#fff8e7)' },
+          { label: 'للعمل', icon: '💼', background: 'linear-gradient(135deg,#efede8,#faf8f5)' },
+          { label: 'رياضة ومشي', icon: '🏃', background: 'linear-gradient(135deg,#e6f8ef,#f3fcf7)' },
+          { label: 'اختيارات الصيف', icon: '🌴', background: 'linear-gradient(135deg,#fff1d8,#fff8ef)' },
+          { label: 'ستايل ناعم', icon: '🎀', background: 'linear-gradient(135deg,#ffe4ed,#fff4f8)' },
+          { label: 'الأكثر مبيعاً', icon: '🔥', background: 'linear-gradient(135deg,#fff2d9,#fff8ee)' },
+        ],
+      },
+    ],
+    chips: ['Sneakers', 'Heels', 'Sandals', 'Comfort', 'Casual'],
+  },
+  {
+    key: 'bags',
+    label: 'حقائب وإكسسوارات',
+    sidebarLinks: ['حقائب وإكسسوارات', 'حقائب يد', 'محافظ', 'نظارات', 'مجوهرات', 'ساعات', 'إكسسوارات شعر'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'حقائب يد', icon: '👜', background: 'linear-gradient(135deg,#f8e4d8,#fff4ee)' },
+          { label: 'محافظ', icon: '👛', background: 'linear-gradient(135deg,#f0e7dd,#fbf7f2)' },
+          { label: 'حقائب ظهر', icon: '🎒', background: 'linear-gradient(135deg,#e9eef7,#f7f9ff)' },
+          { label: 'نظارات', icon: '🕶️', background: 'linear-gradient(135deg,#eceff1,#f9fafb)' },
+          { label: 'مجوهرات', icon: '💍', background: 'linear-gradient(135deg,#eceff3,#fafbfd)' },
+          { label: 'ساعات', icon: '⌚', background: 'linear-gradient(135deg,#edf2f4,#fafbfd)' },
+          { label: 'إكسسوارات شعر', icon: '🎀', background: 'linear-gradient(135deg,#ffe3ec,#fff4f8)' },
+          { label: 'أحزمة', icon: '🪢', background: 'linear-gradient(135deg,#efe7df,#f9f6f2)' },
+          { label: 'أوشحة', icon: '🧣', background: 'linear-gradient(135deg,#f5e8df,#fbf6f2)' },
+          { label: 'أغطية هاتف', icon: '📱', background: 'linear-gradient(135deg,#e8f2ff,#f5f9ff)' },
+          { label: 'إكسسوارات سفر', icon: '✈️', background: 'linear-gradient(135deg,#e9f4ff,#f5faff)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'لمسات نهائية', icon: '✨', background: 'linear-gradient(135deg,#fff2d5,#fff8e9)' },
+          { label: 'ألوان محايدة', icon: '🤎', background: 'linear-gradient(135deg,#f2ece4,#fbfaf7)' },
+          { label: 'ستايل يومي', icon: '☀️', background: 'linear-gradient(135deg,#f2f1eb,#fbfaf8)' },
+          { label: 'سهرات وحفلات', icon: '🥂', background: 'linear-gradient(135deg,#fff1d6,#fff8ec)' },
+          { label: 'للعمل', icon: '💼', background: 'linear-gradient(135deg,#ecebe8,#f9f8f6)' },
+          { label: 'هدايا', icon: '🎁', background: 'linear-gradient(135deg,#ffe3eb,#fff4f8)' },
+          { label: 'مظهر فاخر', icon: '💫', background: 'linear-gradient(135deg,#f0ecff,#faf8ff)' },
+          { label: 'إكسسوارات يومية', icon: '🛍️', background: 'linear-gradient(135deg,#f2f3f4,#fbfbfc)' },
+        ],
+      },
+    ],
+    chips: ['Bags', 'Jewelry', 'Hair', 'Sunglasses', 'Everyday'],
+  },
+  {
+    key: 'beauty',
+    label: 'الصحة والجمال',
+    sidebarLinks: ['الصحة والجمال', 'مكياج', 'عناية بالبشرة', 'عطور', 'أظافر', 'أدوات تجميل', 'عناية شخصية'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'مكياج', icon: '💄', background: 'linear-gradient(135deg,#ffdce8,#fff1f6)' },
+          { label: 'عناية بالبشرة', icon: '🧴', background: 'linear-gradient(135deg,#fff1d6,#fff9ed)' },
+          { label: 'عناية بالشعر', icon: '💆', background: 'linear-gradient(135deg,#f7e7df,#fbf5f1)' },
+          { label: 'عطور', icon: '🌸', background: 'linear-gradient(135deg,#ffe5ef,#fff5f9)' },
+          { label: 'أظافر', icon: '💅', background: 'linear-gradient(135deg,#ffe1ea,#fff3f7)' },
+          { label: 'مرايات', icon: '🪞', background: 'linear-gradient(135deg,#edf1f4,#fafbfd)' },
+          { label: 'أدوات مكياج', icon: '🖌️', background: 'linear-gradient(135deg,#fff0d6,#fff8ea)' },
+          { label: 'منظمات', icon: '🧺', background: 'linear-gradient(135deg,#f2f2f2,#fbfbfb)' },
+          { label: 'عناية شخصية', icon: '🛁', background: 'linear-gradient(135deg,#e4f4ff,#f2fbff)' },
+          { label: 'سبا منزلي', icon: '🕯️', background: 'linear-gradient(135deg,#f7ece2,#fbf7f3)' },
+          { label: 'منتجات صغيرة', icon: '🎀', background: 'linear-gradient(135deg,#ffe3eb,#fff4f8)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'Glow Up', icon: '✨', background: 'linear-gradient(135deg,#fff1d6,#fff8eb)' },
+          { label: 'روتين يومي', icon: '☀️', background: 'linear-gradient(135deg,#f2f0e9,#fbfaf7)' },
+          { label: 'نقاء ونظافة', icon: '🫧', background: 'linear-gradient(135deg,#e8f7ff,#f4fbff)' },
+          { label: 'هدية جميلة', icon: '🎁', background: 'linear-gradient(135deg,#ffe4ed,#fff4f8)' },
+          { label: 'ألوان ناعمة', icon: '🎀', background: 'linear-gradient(135deg,#ffe5ef,#fff4f8)' },
+          { label: 'تنظيم التسريحة', icon: '🪮', background: 'linear-gradient(135deg,#f5ece4,#fbf8f5)' },
+          { label: 'عطور خفيفة', icon: '🌷', background: 'linear-gradient(135deg,#ffe9ef,#fff6fa)' },
+          { label: 'أفضل المبيعات', icon: '🔥', background: 'linear-gradient(135deg,#fff1d5,#fff8eb)' },
+        ],
+      },
+    ],
+    chips: ['Makeup', 'Skin Care', 'Perfume', 'Nails', 'Self Care'],
+  },
+  {
+    key: 'home',
+    label: 'المنزل والمطبخ',
+    sidebarLinks: ['المنزل والمطبخ', 'تنظيم المنزل', 'أدوات مطبخ', 'ديكور', 'بطاطين', 'إضاءة', 'تنظيف'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'ديكور', icon: '🪴', background: 'linear-gradient(135deg,#eaf6ee,#f6fcf8)' },
+          { label: 'أدوات مطبخ', icon: '🍽️', background: 'linear-gradient(135deg,#fff2d6,#fff8eb)' },
+          { label: 'تنظيم المنزل', icon: '🧺', background: 'linear-gradient(135deg,#f3f3f3,#fbfbfb)' },
+          { label: 'مفروشات', icon: '🛏️', background: 'linear-gradient(135deg,#f1ece6,#faf8f5)' },
+          { label: 'إضاءة', icon: '💡', background: 'linear-gradient(135deg,#fff3d6,#fff8ea)' },
+          { label: 'حمام', icon: '🛁', background: 'linear-gradient(135deg,#e4f4ff,#f2fbff)' },
+          { label: 'أدوات تنظيف', icon: '🧽', background: 'linear-gradient(135deg,#edf2f4,#fafbfd)' },
+          { label: 'سجاد', icon: '🧶', background: 'linear-gradient(135deg,#f5eadd,#fbf6f1)' },
+          { label: 'طاولات وترتيب', icon: '🪑', background: 'linear-gradient(135deg,#efe7dd,#f9f6f2)' },
+          { label: 'مستلزمات القهوة', icon: '☕', background: 'linear-gradient(135deg,#f3e8df,#fbf7f3)' },
+          { label: 'تخزين', icon: '📦', background: 'linear-gradient(135deg,#f1f3f4,#fbfbfc)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'بيت مرتب', icon: '🏡', background: 'linear-gradient(135deg,#eef5ef,#f7fbf8)' },
+          { label: 'مطبخ عملي', icon: '🍳', background: 'linear-gradient(135deg,#fff1d8,#fff8ee)' },
+          { label: 'ديكور ناعم', icon: '🤍', background: 'linear-gradient(135deg,#f3f1ec,#fbfaf8)' },
+          { label: 'لمسات قهوة', icon: '☕', background: 'linear-gradient(135deg,#f4e9df,#fbf7f3)' },
+          { label: 'روتين التنظيف', icon: '🫧', background: 'linear-gradient(135deg,#e7f6ff,#f4fbff)' },
+          { label: 'مساحة صغيرة', icon: '📐', background: 'linear-gradient(135deg,#f2f2f2,#fbfbfb)' },
+          { label: 'أجواء دافئة', icon: '🕯️', background: 'linear-gradient(135deg,#f6ece2,#fbf7f4)' },
+          { label: 'الأكثر مبيعاً', icon: '🔥', background: 'linear-gradient(135deg,#fff1d8,#fff8ed)' },
+        ],
+      },
+    ],
+    chips: ['Decor', 'Kitchen', 'Storage', 'Coffee', 'Bathroom'],
+  },
+  {
+    key: 'sports',
+    label: 'الرياضة والأنشطة',
+    sidebarLinks: ['الرياضة والأنشطة', 'جيم', 'يوجا', 'رحلات', 'دراجات', 'تخييم', 'زجاجات ومستلزمات'],
+    sections: [
+      {
+        title: 'تسوق حسب الفئات',
+        items: [
+          { label: 'مشاهدة الكل', icon: '▦', background: 'linear-gradient(135deg,#f1f1f1,#dcdcdc)' },
+          { label: 'ملابس رياضية', icon: '🏃', background: 'linear-gradient(135deg,#e3f6ec,#f2fcf7)' },
+          { label: 'أدوات جيم', icon: '🏋️', background: 'linear-gradient(135deg,#edf2f4,#fafbfd)' },
+          { label: 'يوجا', icon: '🧘', background: 'linear-gradient(135deg,#f0e8ff,#faf8ff)' },
+          { label: 'زجاجات', icon: '🥤', background: 'linear-gradient(135deg,#e7f6ff,#f4fbff)' },
+          { label: 'رحلات', icon: '🎒', background: 'linear-gradient(135deg,#f3ebe2,#fbf7f3)' },
+          { label: 'تخييم', icon: '⛺', background: 'linear-gradient(135deg,#e8f4ea,#f5fbf6)' },
+          { label: 'دراجات', icon: '🚴', background: 'linear-gradient(135deg,#eef2f7,#fafbfd)' },
+          { label: 'كرة', icon: '⚽', background: 'linear-gradient(135deg,#e4f5ec,#f2fbf6)' },
+          { label: 'جري', icon: '👟', background: 'linear-gradient(135deg,#eef1f3,#fafbfc)' },
+          { label: 'شنط رياضية', icon: '👜', background: 'linear-gradient(135deg,#f1ebe4,#fbf8f5)' },
+          { label: 'أنشطة خارجية', icon: '🌳', background: 'linear-gradient(135deg,#e7f6eb,#f4fbf6)' },
+        ],
+      },
+      {
+        title: 'مختارات من أجلك',
+        items: [
+          { label: 'ستايل رياضي', icon: '⚡', background: 'linear-gradient(135deg,#e5f7ee,#f2fcf7)' },
+          { label: 'راحة وحركة', icon: '☁️', background: 'linear-gradient(135deg,#f2f4f7,#fbfcfd)' },
+          { label: 'للرحلات', icon: '🌄', background: 'linear-gradient(135deg,#edf7f1,#f7fcf8)' },
+          { label: 'أدوات بسيطة', icon: '🎽', background: 'linear-gradient(135deg,#edf2f4,#fafbfd)' },
+          { label: 'نشاط يومي', icon: '☀️', background: 'linear-gradient(135deg,#f4f1ea,#fbfaf7)' },
+          { label: 'تخييم', icon: '🔥', background: 'linear-gradient(135deg,#fff0d0,#fff8e8)' },
+          { label: 'جيم منزلي', icon: '🏠', background: 'linear-gradient(135deg,#eef3f6,#fafbfd)' },
+          { label: 'أفضل الاختيارات', icon: '⭐', background: 'linear-gradient(135deg,#fff2cf,#fff8e7)' },
+        ],
+      },
+    ],
+    chips: ['Gym', 'Yoga', 'Outdoor', 'Travel', 'Sport'],
+  },
+];
+
+
+const promoPresets = {
+  new: {
+    heroPromo: {
+      eyebrow: 'Daily Drop',
+      title: 'وصل حديثاً',
+      description: 'اكتشفي القطع الجديدة والاختيارات اليومية بتنسيق أنظف وأقرب لأسلوب متاجر الفاشون الكبيرة.',
+      cta: 'تسوق الجديد',
+      background: 'linear-gradient(135deg,#efe1d4 0%,#f8f1eb 55%,#e5d5c6 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'الأكثر طلباً', subtitle: 'منتجات عليها إقبال اليوم', icon: '🔥', background: 'linear-gradient(135deg,#fff1d8,#fff8ec)' },
+      { title: 'أساسيات الموسم', subtitle: 'قطع يومية سهلة التنسيق', icon: '✨', background: 'linear-gradient(135deg,#f4ece4,#fbf8f5)' },
+    ],
+  },
+  women: {
+    heroPromo: {
+      eyebrow: 'Women Edit',
+      title: 'نساء',
+      description: 'فساتين، توبات، لانجري، وقطع ناعمة بترتيب بصري أوضح وتجربة أقرب للمتاجر الاحترافية.',
+      cta: 'اكتشفي النساء',
+      background: 'linear-gradient(135deg,#f6ddd9 0%,#fff5f2 58%,#ecd0ca 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'فساتين ناعمة', subtitle: 'مختارات مناسبة لليوم والسهرات', icon: '👗', background: 'linear-gradient(135deg,#ffe5ea,#fff4f7)' },
+      { title: 'أساسيات أنثوية', subtitle: 'ستايل خفيف وألوان هادئة', icon: '🎀', background: 'linear-gradient(135deg,#f7ece4,#fbf8f5)' },
+    ],
+  },
+  men: {
+    heroPromo: {
+      eyebrow: 'Men Edit',
+      title: 'رجال',
+      description: 'تيشيرتات، قمصان، دينم، وأحذية بإيقاع بصري منظم وسريع التصفح.',
+      cta: 'اكتشف الرجال',
+      background: 'linear-gradient(135deg,#dfe6ef 0%,#f6f8fb 55%,#d6dde8 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'Street Casual', subtitle: 'أساسيات يومية ومظهر حضري', icon: '🧢', background: 'linear-gradient(135deg,#eceff3,#fafbfc)' },
+      { title: 'Formal Picks', subtitle: 'قطع مناسبة للعمل والخروج', icon: '💼', background: 'linear-gradient(135deg,#f1ece6,#faf8f4)' },
+    ],
+  },
+  kids: {
+    heroPromo: {
+      eyebrow: 'Kids Picks',
+      title: 'الأطفال',
+      description: 'أطقم لطيفة، فساتين بنات، ملابس رضع، وقطع مدرسية بواجهة أوضح وأسهل في الاستكشاف.',
+      cta: 'تسوق الأطفال',
+      background: 'linear-gradient(135deg,#fff1cf 0%,#fff8e9 55%,#ffe8b4 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'عودة للمدرسة', subtitle: 'ملابس واحتياجات يومية', icon: '🎒', background: 'linear-gradient(135deg,#fff3d8,#fff9ef)' },
+      { title: 'ألوان مرحة', subtitle: 'اختيارات تحبها البنات والأولاد', icon: '🌈', background: 'linear-gradient(135deg,#ffe5ef,#fff6fa)' },
+    ],
+  },
+  toys: {
+    heroPromo: {
+      eyebrow: 'Creative Play',
+      title: 'الألعاب',
+      description: 'مكعبات، رسم، أنشطة تعليمية، وهدايا للأطفال ضمن قائمة غنية ومنظمة.',
+      cta: 'اكتشف الألعاب',
+      background: 'linear-gradient(135deg,#ffe8cc 0%,#fff7ec 55%,#ffd8ad 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'ألعاب تعليمية', subtitle: 'تعلم باللعب والنشاط', icon: '🧩', background: 'linear-gradient(135deg,#fff0d3,#fff8ea)' },
+      { title: 'رسم وتلوين', subtitle: 'نشاطات ممتعة وإبداعية', icon: '🎨', background: 'linear-gradient(135deg,#ffe3ef,#fff5f9)' },
+    ],
+  },
+  electronics: {
+    heroPromo: {
+      eyebrow: 'Smart Desk',
+      title: 'إلكترونيات',
+      description: 'جرابات، سماعات، إضاءة مكتبية، وملحقات تقنية مع عرض بصري مرتب وواضح.',
+      cta: 'تصفح الإلكترونيات',
+      background: 'linear-gradient(135deg,#dfe9f6 0%,#f5f9ff 55%,#d2def0 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'Mobile Setup', subtitle: 'ملحقات عملية للموبايل', icon: '📱', background: 'linear-gradient(135deg,#e9f2ff,#f5f9ff)' },
+      { title: 'Desk Essentials', subtitle: 'إكسسوارات مكتب وتقنية', icon: '⌨️', background: 'linear-gradient(135deg,#edf1f4,#fafbfd)' },
+    ],
+  },
+  shoes: {
+    heroPromo: {
+      eyebrow: 'Shoe Edit',
+      title: 'أحذية',
+      description: 'صنادل، رياضي، كعب عالٍ، وأحذية أطفال بعرض أقرب لمتاجر الأزياء.',
+      cta: 'تسوق الأحذية',
+      background: 'linear-gradient(135deg,#efe7df 0%,#faf7f3 55%,#e5d8cc 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'راحة طوال اليوم', subtitle: 'موديلات يومية ومريحة', icon: '☁️', background: 'linear-gradient(135deg,#f2f4f7,#fbfcfd)' },
+      { title: 'Party Picks', subtitle: 'موديلات للحفلات والخروج', icon: '👠', background: 'linear-gradient(135deg,#ffe5ee,#fff4f8)' },
+    ],
+  },
+  bags: {
+    heroPromo: {
+      eyebrow: 'Accessories Edit',
+      title: 'حقائب وإكسسوارات',
+      description: 'حقائب يد، محافظ، نظارات، ومجوهرات ضمن عرض ثري واحترافي.',
+      cta: 'تسوق الإكسسوارات',
+      background: 'linear-gradient(135deg,#efe5db 0%,#faf7f3 55%,#e6d7ca 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'حقائب يومية', subtitle: 'لمسات عملية وأنيقة', icon: '👜', background: 'linear-gradient(135deg,#f7e6db,#fff5ef)' },
+      { title: 'مجوهرات ناعمة', subtitle: 'إكمال الإطلالة بسهولة', icon: '💍', background: 'linear-gradient(135deg,#edf1f4,#fafbfd)' },
+    ],
+  },
+  beauty: {
+    heroPromo: {
+      eyebrow: 'Beauty Room',
+      title: 'الصحة والجمال',
+      description: 'مكياج، عناية بالبشرة، عطور، وأدوات تجميل ضمن نافذة عرض مرتبة وجذابة.',
+      cta: 'اكتشف الجمال',
+      background: 'linear-gradient(135deg,#ffe3ea 0%,#fff4f8 55%,#ffd5df 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'Glow Routine', subtitle: 'خطوات يومية ناعمة', icon: '✨', background: 'linear-gradient(135deg,#fff1d6,#fff8eb)' },
+      { title: 'Pink Corner', subtitle: 'منتجات لطيفة ومنظمة', icon: '💄', background: 'linear-gradient(135deg,#ffe3eb,#fff4f8)' },
+    ],
+  },
+  home: {
+    heroPromo: {
+      eyebrow: 'Home Edit',
+      title: 'المنزل والمطبخ',
+      description: 'ديكور، أدوات مطبخ، تخزين، وإضاءة بإخراج بصري أنظف وأهدأ.',
+      cta: 'تسوق المنزل',
+      background: 'linear-gradient(135deg,#ece5dc 0%,#f9f6f2 55%,#e1d4c8 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'بيت مرتب', subtitle: 'منظمات ولمسات دافئة', icon: '🏡', background: 'linear-gradient(135deg,#eef5ef,#f8fcf9)' },
+      { title: 'Coffee Corner', subtitle: 'مستلزمات ومزاج هادئ', icon: '☕', background: 'linear-gradient(135deg,#f3e8df,#fbf7f3)' },
+    ],
+  },
+  sports: {
+    heroPromo: {
+      eyebrow: 'Move More',
+      title: 'الرياضة والأنشطة',
+      description: 'ملابس رياضية، أدوات جيم، يوجا، ورحلات في تجربة تصفح أكثر وضوحاً.',
+      cta: 'ابدأ النشاط',
+      background: 'linear-gradient(135deg,#e5f1ea 0%,#f6fbf8 55%,#d8e8de 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [
+      { title: 'Gym Picks', subtitle: 'أساسيات الحركة اليومية', icon: '🏋️', background: 'linear-gradient(135deg,#e7f7ef,#f4fcf8)' },
+      { title: 'Outdoor Mode', subtitle: 'رحلات وأنشطة خارجية', icon: '⛺', background: 'linear-gradient(135deg,#edf6ef,#f7fcf8)' },
+    ],
+  },
+};
+
+function enrichCategory(category) {
+  const promo = promoPresets[category.key] ?? {
+    heroPromo: {
+      eyebrow: 'Featured',
+      title: category.label,
+      description: 'استكشف هذه الفئة من خلال قائمة منظمة وعناصر مرئية أوضح.',
+      cta: 'اكتشف الآن',
+      background: 'linear-gradient(135deg,#f0f0f0 0%,#fafafa 55%,#e5e5e5 100%)',
+      accent: '#17120f',
+    },
+    spotlight: [],
+  };
+
+  return {
+    ...category,
+    ...promo,
+  };
+}
+
+export const navigationCategories = baseNavigationCategories.map(enrichCategory);
+
+export const navigationCategoryMap = Object.fromEntries(
+  navigationCategories.map((category) => [category.key, category]),
+);

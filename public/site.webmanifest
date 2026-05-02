@@ -1,0 +1,17 @@
+{
+  "name": "SET Store",
+  "short_name": "SET",
+  "description": "واجهة متجر إلكتروني نظيفة وعصرية مستوحاة من تقسيم متاجر الفاشون.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f7f7f7",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
