@@ -5,6 +5,9 @@ SET Store is a portfolio-ready e-commerce frontend built with React, Vite, Tailw
 The project demonstrates a complete commerce experience: storefront browsing, product details, wishlist, cart, checkout, customer account area, local authentication, admin dashboard, vendor workspace, multi-currency support, and operational management screens.
 
 ---
+## Live Demo
+
+[View Live Demo](https://ecommerce-storefront-ruddy.vercel.app/)
 
 ## Key Features
 
